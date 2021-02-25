@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 
 //sql database file require
-var mysqldb = require('./services/mysql.db.service');
+var mysqldb = require('./mysql.db.service');
 
 // Connect to MySQL on start
 mysqldb.connect(mysqldb.MODE_PRODUCTION, function(err){
