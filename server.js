@@ -4,7 +4,10 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
-
+const UserRoute=require("./routes/User");
+const DoctorRoute=require("./routes/Doctor");
+const ConsultationRoute=require("./routes/Consultation");
+const CategoriesRoute=require("./routes/Categories");
 
 //sql database file require
 var mysqldb = require('./mysql.db.service');
@@ -34,6 +37,10 @@ app.use((req, res, next) => {
 });
 
 // Routes which should handle requests
+app.use("/user",UserRoute);
+app.use("/doctor",DoctorRoute);
+app.use("/categories",CategoriesRoute);
+app.use("/consultation",ConsultationRoute);
 
 // Error handler
 app.use((req, res, next) => {
@@ -46,7 +53,7 @@ app.use((error, req, res, next) => {
     res.status(error.status || 500);
     res.json({
         error: {
-            message: error.message
+            message: "error.message"
         }
     });
 });
