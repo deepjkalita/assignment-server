@@ -12,12 +12,7 @@ const CategoriesRoute=require("./routes/Categories");
 //sql database file require
 var mysqldb = require('./mysql.db.service');
 
-// Connect to MySQL on start
-mysqldb.connect(mysqldb.MODE_PRODUCTION, function(err){
-    if(!err){
-        console.log('mySql is connected');
-    }
-});
+
 
 
 app.use(morgan('dev'));
