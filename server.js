@@ -9,11 +9,6 @@ const DoctorRoute=require("./routes/Doctor");
 const ConsultationRoute=require("./routes/Consultation");
 const CategoriesRoute=require("./routes/Categories");
 
-//sql database file require
-var mysqldb = require('./mysql.db.service');
-
-
-
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
